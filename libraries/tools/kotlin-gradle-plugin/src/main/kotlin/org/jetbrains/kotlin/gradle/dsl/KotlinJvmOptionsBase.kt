@@ -92,5 +92,5 @@ internal fun org.jetbrains.kotlin.cli.common.arguments.K2JVMCompilerArguments.fi
     noJdk = false
     noReflect = true
     noStdlib = true
-    pacakgePrefix = ""
+    packagePrefix = ""
 }
