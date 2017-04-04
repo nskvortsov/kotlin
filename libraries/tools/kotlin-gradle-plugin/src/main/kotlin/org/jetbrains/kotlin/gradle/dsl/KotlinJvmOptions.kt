@@ -46,4 +46,6 @@ interface KotlinJvmOptions  : org.jetbrains.kotlin.gradle.dsl.KotlinCommonOption
      * Default value: true
      */
      var noStdlib: kotlin.Boolean
+
+     var packagePrefix: String
 }

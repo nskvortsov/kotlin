@@ -59,6 +59,11 @@ internal abstract class KotlinJvmOptionsBase : org.jetbrains.kotlin.gradle.dsl.K
         get() = noStdlibField ?: true
         set(value) { noStdlibField = value }
 
+    private var packagePrefixField: String? = null
+    override var packagePrefix: String
+        get() = packagePrefixField ?: ""
+        set(value) { packagePrefixField = value }
+
     internal open fun updateArguments(args: org.jetbrains.kotlin.cli.common.arguments.K2JVMCompilerArguments) {
         apiVersionField?.let { args.apiVersion = it }
         languageVersionField?.let { args.languageVersion = it }
@@ -71,6 +76,7 @@ internal abstract class KotlinJvmOptionsBase : org.jetbrains.kotlin.gradle.dsl.K
         noJdkField?.let { args.noJdk = it }
         noReflectField?.let { args.noReflect = it }
         noStdlibField?.let { args.noStdlib = it }
+        packagePrefixField?.let { args.packagePrefix = it }
     }
 }
 
@@ -86,4 +92,5 @@ internal fun org.jetbrains.kotlin.cli.common.arguments.K2JVMCompilerArguments.fi
     noJdk = false
     noReflect = true
     noStdlib = true
+    pacakgePrefix = ""
 }

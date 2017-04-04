@@ -62,7 +62,8 @@ internal class GradleCompilerRunner(private val project: Project) : KotlinCompil
                 sourcesToCompile = sourcesToCompile,
                 javaSourceRoots = javaSourceRoots,
                 classpath = args.classpathAsList,
-                friendDirs = args.friendPaths?.map(::File) ?: emptyList())
+                friendDirs = args.friendPaths?.map(::File) ?: emptyList()
+                packagePrefix = args.packagePrefix)
         args.module = moduleFile.absolutePath
 
         if (environment !is GradleIncrementalCompilerEnvironment) {

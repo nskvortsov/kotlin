@@ -115,6 +115,8 @@ public class K2JVMCompilerArguments extends CommonCompilerArguments {
     @ValueDescription("<key=value[,]>")
     public String[] scriptResolverEnvironment;
 
+    public String packagePrefix;
+
     // Paths to output directories for friend modules.
     public String[] friendPaths;
 
